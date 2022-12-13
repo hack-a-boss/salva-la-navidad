@@ -110,8 +110,8 @@ function pauseAnimation() {
 // Esta función se ejecuta al acabar la partida
 function endGame() {
   item.textContent = EMOJI_KO;
-  info.textContent = `Partida acabada. Salvaste ${points} emojis.`;
+  info.textContent = `Partida acabada. Salvaste ${points} emojis navideños. Recarga la página para reintentarlo.`;
 }
 
-info.textContent = `No dejes que los emojis lleguen hasta arriba`;
+info.textContent = `No dejes que los emojis navideños lleguen hasta arriba`;
 run();
