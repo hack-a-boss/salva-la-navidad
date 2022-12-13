@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  overflow: hidden;
+  font-family: sans-serif;
+  touch-action: none;
+}
+
+main {
+  min-height: 100vh;
+  background-color: skyblue;
+}
+
+div.item {
+  width: min-content;
+  cursor: grab;
+  transition: opacity 500ms;
+}
+
+p.info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+  pointer-events: none;
+  z-index: 2;
+}
+
+span.cloud {
+  position: absolute;
+  z-index: 1;
+}
