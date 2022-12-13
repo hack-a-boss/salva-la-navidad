@@ -2,7 +2,7 @@ const sky = document.querySelector("main.sky");
 const item = document.querySelector("div.item");
 const info = document.querySelector("p.info");
 
-const EMOJI_LIST = ["🎅", "🤶", "🎄", "🧑‍🎄", "🎁", "⛄"];
+const EMOJI_LIST = ["🎅", "🤶", "🎄", "🎁", "⛄"];
 const EMOJI_OK = "✨";
 const EMOJI_KO = "💥";
 const EMOJI_CLOUD = "☁️";
@@ -62,8 +62,11 @@ function addCloud() {
 
 //Esta función es el loop principal del juego
 function run() {
-  //Añadir una nube al "sky"
-  addCloud();
+  //Cancelamos la animación
+  cancelAnimation();
+
+  //Añadir una nube al "sky" si tenemos puntos
+  if (points) addCloud();
 
   //Resetear la opacidad del item
   item.style.opacity = 1;
@@ -104,6 +107,13 @@ function run() {
 function pauseAnimation() {
   for (const animation of item.getAnimations()) {
     animation.pause();
+  }
+}
+
+//Cancel item animation
+function cancelAnimation() {
+  for (const animation of item.getAnimations()) {
+    animation.cancel();
   }
 }
 
